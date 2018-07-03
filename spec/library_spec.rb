@@ -4,34 +4,27 @@ require_relative('../library.rb')
 
 class TestLibrary < MiniTest::Test
   def setup
-    @library = Library.new(
-      "Lord of the Flies",
-      "Angelina",
-      "11/04/16",
-      "Lord of the Rings",
-      "Bob",
-      "01/01/16",
-      "Necronomicon",
-      "",
-      ""  )
+    @books =[
+      {
+        title: "Lord of the Flies",
+        rental_details: {
+          student_name: "Angelina",
+          due_date: "11/04/16"
+        }},
+      {
+        title: "Necronomicon",
+        rental_details: {
+          student_name: "Jonathan",
+          due_date: "01/01/16"
+        }},
+      {
+        title: "",
+        rental_details: {
+          student_name: "",
+          due_date: ""
+        }}
+    ]
+
+    @library = Library.new(@books)
+
   end
-  #1
-  def test_book_name
-    assert_equal("Lord of the Flies", @library.book_name_1)
-  end
-  #2
-  def test_student_name
-    assert_equal("Angelina", @library.student_name_1)
-  end
-  #3
-  def test_due_date
-    assert_equal("11/04/16", @library.due_date_1)
-  end
-  #4
-
-
-
-
-
-
-end
